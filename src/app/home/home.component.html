@@ -1,0 +1,21 @@
+<div class="main-container-img">
+	<div class="container-img-screen">
+		<h2 class="white-text center animated bounceInDown">Suggestions Box</h2>
+		<p class="white-text center animated bounceInLeft">El camino fácil para realizar sugerencias, comentarios y preguntas.</p>
+	</div>
+	<div class="container-img-cover"></div>
+</div>
+
+<div class="container m-top-space">
+	<div class="row card-container">
+		<app-suggestion-service
+			*ngFor="let suggestionCard of suggestionsCard"
+			[id]="suggestionCard.id"
+			[title]="suggestionCard.title"
+			[description]="suggestionCard.description"
+			[image]="suggestionCard.image"
+			class="card col s12 m5">
+				
+		</app-suggestion-service>
+	</div>
+</div>

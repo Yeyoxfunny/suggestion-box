@@ -1,0 +1,107 @@
+/* HELPER CLASS */
+.m-space{
+	margin: 1rem;
+}
+
+.m-top-space{
+	margin-top: 1rem;
+}
+.m-bottom-space{
+	margin-bottom: 1rem;
+}
+
+.p-big-space{
+	padding: 3rem;
+}
+
+.f-size-medium{
+	font-size: 2.5rem;
+}
+
+.center-block{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.reset-margin{
+	margin: 0;
+}
+
+/* HOME */
+.main-container-img{
+	background-image: url(assets/images/home/image2.png);
+    background-size: cover;
+	height: 300px;
+	position: relative;
+}
+
+.container-img-screen{
+	position: relative;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	z-index: 1000;
+}
+
+.container-img-screen p{
+	font-size: 16px;
+}
+
+.container-img-cover{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+	top: 0;
+}
+
+
+/* SUGGESTIONS CONTAINER */
+.card-container{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.suggestion-service-card-content{
+	display: flex;
+}
+
+.card-content h3{
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.card-icon{
+	display: flex;
+	align-items: center;
+	margin-right: 10px;
+}
+.card-icon img{
+	display: block;
+	height: 64px;
+}
+
+/* SUGGERENCE FORM */
+.suggerence-box{
+  width: 70%;
+}
+.suggestion-color{
+	color: #757575;
+}
+
+/* DASHBOARD */
+.center-icon{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.suggestions-content{
+	display: flex;
+	flex-wrap: wrap;
+}
+#dashboard-header{
+	height: 150px;
+	background: tomato;
+}
