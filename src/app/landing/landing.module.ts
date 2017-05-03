@@ -24,4 +24,4 @@ const routedComponents = [ HomeComponent, ContactComponent ];
   exports: [ AppComponent ]
 
 })
-export class CoreModule { }
+export class LandingModule { }

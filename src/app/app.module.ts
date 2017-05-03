@@ -6,28 +6,25 @@ import { MaterializeModule } from 'angular2-materialize';
 
 import { Routes, RouterModule } from '@angular/router';
 
-import { CoreModule } from './core/core.module';
-import { AppComponent } from './core/app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { SuggestionComponent } from './dashboard/suggestion/suggestion.component';
+import { LandingModule } from './landing/landing.module';
+import { AppComponent } from './landing/app.component';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 const routes : Routes = [ 
-              { path : '', loadChildren: './core/core.module#CoreModule' },
-              { path: 'dashboard', component: DashboardComponent}
+              { path : '', loadChildren: './landing/landing.module#LandingModule' },
+              { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' }
             ];
-
 
 @NgModule({
   declarations: [
-    DashboardComponent,
-    SuggestionComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     MaterializeModule,
-    CoreModule,
+    LandingModule,
+    DashboardModule,
     RouterModule.forRoot(routes)
   ],
   providers: [  ],
