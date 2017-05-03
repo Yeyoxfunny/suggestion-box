@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import { SUGGESTIONS_SERVICE_CARD } from '../common/mock-suggestion-service-card';
-import { ISuggestionServiceCard } from '../models/ISuggestionServiceCard';
+import { SUGGESTIONS_SERVICE_CARD } from '../../common/mock-suggestion-service-card';
+import { ISuggestionServiceCard } from '../../models/ISuggestionServiceCard';
 
-import { ContactService } from '../services/contact.service';
+import { ContactService } from '../../services/contact.service';
 
 @Component({
   selector: 'app-home',

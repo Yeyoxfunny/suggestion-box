@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { ISuggestionServiceCard } from '../models/ISuggestionServiceCard';
+import { ISuggestionServiceCard } from '../../models/ISuggestionServiceCard';
 
-import { ContactService } from '../services/contact.service';
+import { ContactService } from '../../services/contact.service';
 
 @Component({
   selector: 'app-contact',

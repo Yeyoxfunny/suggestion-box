@@ -4,17 +4,22 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterializeModule } from 'angular2-materialize';
 
-import { AppComponent } from './app.component';
-import { SuggestionServiceComponent } from './home/suggestion-service/suggestion-service.component';
-import { routes, routedComponents } from './app.router';
+import { Routes, RouterModule } from '@angular/router';
+
+import { CoreModule } from './core/core.module';
+import { AppComponent } from './core/app.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { SuggestionComponent } from './dashboard/suggestion/suggestion.component';
+
+const routes : Routes = [ 
+              { path : '', loadChildren: './core/core.module#CoreModule' },
+              { path: 'dashboard', component: DashboardComponent}
+            ];
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    routedComponents,
-    SuggestionServiceComponent,
+    DashboardComponent,
     SuggestionComponent
   ],
   imports: [
@@ -22,9 +27,10 @@ import { SuggestionComponent } from './dashboard/suggestion/suggestion.component
     FormsModule,
     HttpModule,
     MaterializeModule,
-    routes
+    CoreModule,
+    RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
