@@ -7,16 +7,17 @@ import { MaterializeModule } from 'angular2-materialize';
 import { Routes, RouterModule } from '@angular/router';
 
 import { LandingModule } from './landing/landing.module';
-import { AppComponent } from './landing/app.component';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { AppComponent } from './app.component';
 
 const routes : Routes = [ 
-              { path : '', loadChildren: './landing/landing.module#LandingModule' },
+              { path : '', loadChildren: './landing/landing.module#LandingModule'},
               { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' }
             ];
 
 @NgModule({
   declarations: [
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +29,6 @@ const routes : Routes = [
     RouterModule.forRoot(routes)
   ],
   providers: [  ],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
