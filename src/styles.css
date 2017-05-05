@@ -91,6 +91,25 @@
 }
 
 /* DASHBOARD */
+nav .nav-wrapper i{
+	font-size: 2rem;
+}
+
+#main{
+	padding-left: 240px;
+}
+
+@media only screen and (max-width: 993px) {
+	#main {
+		padding-left: 0px;
+	}
+}
+
+ul.side-nav.leftside-navigation{
+	top: 64px;
+	overflow: hidden;
+}
+
 .promo{
 	width: 100%;
 }
@@ -112,11 +131,11 @@
 	margin-right: auto;
 }
 
+.pointer-icon{
+	cursor: pointer;
+}
+
 .suggestions-content{
 	display: flex;
 	flex-wrap: wrap;
-}
-#dashboard-header{
-	height: 150px;
-	background: tomato;
 }

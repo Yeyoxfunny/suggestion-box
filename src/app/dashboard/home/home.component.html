@@ -1,32 +1,12 @@
-
 <app-top-bar></app-top-bar>
 
-<div class="container">
-	<div class="row">
-		<div class="col s6">
-			<div class="center promo">
-				<i class="material-icons">build</i>
-				<a routerLink="manage-services" class="promo-caption">Administrar Servcios</a>
-			</div>
-		</div>
-		<div class="col s6">
-			<div class="center promo">
-				<i class="material-icons">mail</i>
-				<a href="#" class="promo-caption">Caja de Sugerencias</a>
-			</div>
-		</div>
-		<div class="col s6">
-			<div class="center promo">
-				<i class="material-icons">flash_on</i>
-				<p class="promo-caption">Lorem ipsum dolor sit amet.</p>
-			</div>
-		</div>
-				<div class="col s6">
-			<div class="center promo">
-				<i class="material-icons">flash_on</i>
-				<p class="promo-caption">Lorem ipsum dolor sit amet.</p>
-			</div>
-		</div>
+<div id="main">
+	<app-side-nav></app-side-nav>
+
+	<section id="content">
+	<div class="container">
+		<router-outlet name="auxoutlet"></router-outlet>
 	</div>
+</section>
 
 </div>

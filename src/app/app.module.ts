@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { MaterializeModule } from 'angular2-materialize';
+
 
 import { Routes, RouterModule } from '@angular/router';
 
@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
 
 const routes : Routes = [ 
               { path : '', loadChildren: './landing/landing.module#LandingModule'},
-              { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' }
+              { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule'}
             ];
 
 @NgModule({
@@ -23,7 +23,6 @@ const routes : Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    MaterializeModule,
     LandingModule,
     DashboardModule,
     RouterModule.forRoot(routes)

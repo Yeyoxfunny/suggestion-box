@@ -1,0 +1,23 @@
+<ul id="slide-out" class="side-nav fixed leftside-navigation" style="transform: translateX(0px);">
+	<li>
+		<div class="userView">
+			<div class="background">
+				<img src="http://materializecss.com/images/office.jpg">
+			</div>
+			<a href="#!user"><img class="circle" src="assets/images/skrollex.png"></a>
+			<a href="#!name"><span class="white-text name">Sergio Morales</span></a>
+			<a href="#!email"><span class="white-text email">smorales@intergrupo.com</span></a>
+		</div>
+	</li>
+	<li>
+		<a [routerLink]="[{ outlets: { 'auxoutlet': ['suggestions'] } }]">
+			<i class="material-icons">markunread_mailbox</i>Caja de sugerencias
+		</a>
+	</li>
+	<li>
+		<a routerLink="manage-services"><i class="material-icons">build</i>Administrar Servicios</a>
+	</li>
+	<li>
+		<a href="#!"><i class="material-icons">account_circle</i>Configuración de la cuenta</a>
+	</li>
+</ul>
