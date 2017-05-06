@@ -19,7 +19,7 @@ const routedComponents = [ HomeComponent, ContactComponent ];
     CommonModule,
    	RouterModule.forChild(routes),
   ],
-  declarations: [ TopBarComponent, routedComponents, SuggestionServiceComponent ],
+  declarations: [ routedComponents, TopBarComponent, SuggestionServiceComponent ],
   exports: [  ]
 
 })

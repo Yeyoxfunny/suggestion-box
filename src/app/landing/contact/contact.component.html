@@ -1,24 +1,31 @@
 <app-top-bar></app-top-bar>
 <div class="container">
-	<form action="" class="z-depth-2 suggerence-box center-block animated fadeInDown">
+	<form action="" class="z-depth-2 container center-block animated fadeInDown">
 		<div class="row p-big-space">
 			<div class="col s12 m-bottom-space">
-				<div class="col s2">
-					<img src="assets/images/home/icons/{{suggestionCard.image}}" style="max-width: 100%;">
+				<div class="col m2">
+					<img src="assets/images/home/icons/{{suggestionCard.image}}" style="max-width: 100%;" class="hide-on-small-only">
 				</div>
-				<h4 class="suggestion-color center col s10 reset-margin">{{ suggestionCard.description }}</h4>
+				<h4 class="suggestion-color center col s12 m10 reset-margin title-form">{{ suggestionCard.description }}</h4>
 			</div>
 
+			
 			<div class="input-field col s12">
 				<i class="material-icons prefix">sms</i>
 				<input id="title" type="text" name="title" required required class="validate">
 				<label for="title">Escribe un tema</label>
 			</div>
 
-			<div class="input-field col s12">
+			<div class="input-field col s12 m6">
 				<i class="material-icons prefix">account_circle</i>
 				<input id="name" type="text" name="name" required class="validate">
-				<label for="name">Escribe tu nombre</label>
+				<label for="name">Nombre</label>
+			</div>
+
+			<div class="input-field col s12 m6">
+				<i class="material-icons prefix"></i>
+				<input id="surname" type="text" name="surname" required class="validate">
+				<label for="surname">Apellido</label>
 			</div>
 
 			<div class="input-field col s12">
