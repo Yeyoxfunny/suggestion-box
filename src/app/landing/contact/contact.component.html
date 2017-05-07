@@ -1,6 +1,6 @@
 <app-top-bar></app-top-bar>
 <div class="container">
-	<form action="" class="z-depth-2 container center-block animated fadeInDown">
+	<form #suggestionForm="ngForm" (ngSubmit)="onSubmit(suggestionForm.value)" class="z-depth-2 container center-block animated fadeInDown myForm" novalidate>
 		<div class="row p-big-space">
 			<div class="col s12 m-bottom-space">
 				<div class="col m2">
@@ -11,37 +11,46 @@
 
 			
 			<div class="input-field col s12">
-				<i class="material-icons prefix">sms</i>
-				<input id="title" type="text" name="title" required required class="validate">
+				<i class="material-icons prefix" [style.color]="!title.valid && !title.pristine? '#F44336': null">sms</i>
+				<input id="title" type="text" name="title" required #title="ngModel" ngModel>
 				<label for="title">Escribe un tema</label>
+				<span [hidden]="title.valid || title.pristine" class="validation error">Por favor ingrese el título</span>
 			</div>
 
+			<!--p>{{title.className}}</p-->
+
 			<div class="input-field col s12 m6">
-				<i class="material-icons prefix">account_circle</i>
-				<input id="name" type="text" name="name" required class="validate">
+				<i class="material-icons prefix" [style.color]="!name.valid && !name.pristine? '#F44336': null">account_circle</i>
+				<input id="name" type="text" name="name" required #name="ngModel" ngModel>
 				<label for="name">Nombre</label>
+				<span [hidden]="name.valid || name.pristine" class="validation error">Por favor ingrese su nombre</span>
 			</div>
 
 			<div class="input-field col s12 m6">
-				<i class="material-icons prefix"></i>
-				<input id="surname" type="text" name="surname" required class="validate">
+				<i class="material-icons prefix hide-on-med-only"></i>
+				<input id="surname" type="text" name="surname" required #surname="ngModel" ngModel>
 				<label for="surname">Apellido</label>
+				<span [hidden]="surname.valid || surname.pristine" class="validation error">Por favor ingrese su apellido</span>
 			</div>
 
 			<div class="input-field col s12">
-				<i class="material-icons prefix">email</i>
-				<input id="email" type="email" name="email" required class="validate">
+				<i class="material-icons prefix" [style.color]="!email.valid && !email.pristine? '#F44336': null">email</i>
+				<input id="email" type="email" name="email" required #email="ngModel" ngModel>
 				<label for="email">Escribe tu e-mail</label>
+				<span [hidden]="email.valid || email.pristine" class="validation error">Por favor ingrese su e-mail</span>
 			</div>
 
 
 			<div class="input-field col s12">
-				<i class="material-icons prefix">create</i>
-				<textarea id="descripcion" type="text" name="description" required class="materialize-textarea"></textarea>
+				<i class="material-icons prefix" [style.color]="!description.valid && !description.pristine? '#F44336': null">create</i>
+				<textarea id="descripcion" type="text" name="description" required #description="ngModel" ngModel class="materialize-textarea"></textarea>
 				<label for="descripcion">Descripción</label>
+				<span [hidden]="description.valid || description.pristine" class="validation error">Por favor ingrese una descripción</span>
 			</div>
 
-			<button class="btn waves-effect waves-ligh light-blue darken-4" required type="submit">Enviar</button>
+			<div class="col s12">
+				<button class="btn waves-effect waves-ligh light-blue darken-4" type="submit" [disabled]="!suggestionForm.form.valid">Enviar</button>
+			</div>
 		</div>
 	</form>
 </div>

@@ -8,6 +8,7 @@ import { ContactService } from '../../services/contact.service';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
+  styleUrls: ['./contact.component.css'],
   providers: [ ContactService ]
 })
 export class ContactComponent implements OnInit {
@@ -28,4 +29,8 @@ export class ContactComponent implements OnInit {
 			this.suggestionCard = this.contactService.getSuggestionCardById(id);
 		});
   	}
+
+	onSubmit(value : any){
+		console.log(value);
+	}
 }

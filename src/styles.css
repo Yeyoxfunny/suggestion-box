@@ -92,6 +92,19 @@
 .suggestion-color{
 	color: #757575;
 }
+.myForm input, .myForm textarea{
+	margin: 0;
+}
+.myForm .input-field{
+	margin-bottom: 30px;
+}
+.myForm .validation{
+	margin-left: 3rem;
+	font-size: .8rem;
+}
+.myForm .error{
+	color: #F44336;
+}
 
 /* DASHBOARD */
 nav .nav-wrapper i{

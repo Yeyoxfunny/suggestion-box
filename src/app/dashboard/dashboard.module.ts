@@ -18,7 +18,7 @@ const routes : Routes = [
 								[
 									{ path: '', component: HomeComponent },
 									{ path: 'manage-services', component: ManageServicesComponent },
-									{ path: 'manage-suggestions', component: SuggestionsComponent }
+									{ path: 'suggestions', component: SuggestionsComponent }
 								]
 							}
 						];

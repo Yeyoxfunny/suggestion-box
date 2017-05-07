@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms'
 import { Routes, RouterModule } from '@angular/router';
 
 import { TopBarComponent } from './top-bar/top-bar.component';
@@ -17,6 +18,7 @@ const routedComponents = [ HomeComponent, ContactComponent ];
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
    	RouterModule.forChild(routes),
   ],
   declarations: [ routedComponents, TopBarComponent, SuggestionServiceComponent ],
