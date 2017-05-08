@@ -1,11 +1,57 @@
+
 <app-top-bar></app-top-bar>
 <div id="main">
 	<app-side-nav></app-side-nav>
+	
+	<section id="content" class="container animated zoomIn">
+		<div class="m-top-space">
+			<a class="waves-effect waves-light btn" (click)="showNewItemForm()"><i class="material-icons left">add</i>Nuevo</a>
+			<form action="" class="container animated " 
+				[ngClass]="{'fadeInDown': !hideElement, 'fadeInUp': hideElement }"
+				[hidden]="hideElement">
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="title" type="text" class="validate">
+          				<label for="title">Título</label>
+					</div>
+					<div class="input-field col s12">
+						<input id="caption" type="text" class="validate">
+          				<label for="caption">Descripción</label>
+					</div>
+					<div class="col s12">
+						<input type="file">
+					</div>
+					<div class="col s12">
+						<a class="waves-effect waves-light btn">Agregar</a>
+						<a class="waves-effect waves-light btn" (click)="hideNewItemForm()">Cancelar</a>
+					</div>
+				</div>
+			</form>
+		</div>
+		<table>
+			<thead>
+				<tr>
+					<th></th>
+					<th>Id</th>
+					<th>Título</th>
+					<th>Leyenda</th>
+				</tr>
+			</thead>
 
-	<section id="content">
-	<div class="container">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, vero.</p>
-	</div>
-</section>
-
+			<tbody>
+				<tr *ngFor="let typeSuggestion of TypeSuggestions">
+					<th>
+						<img src="/assets/images/home/icons/{{typeSuggestion.image}}" class="circle responsive-img" style="width: 70px;">
+					</th>
+					<th>{{typeSuggestion.id}}</th>
+					<th>{{ typeSuggestion.title }}</th>
+					<th>{{ typeSuggestion.description }}</th>
+					<th>
+						<a class="waves-effect waves-light btn"><i class="material-icons">mode_edit</i></a>
+						<a class="waves-effect waves-light btn"><i class="material-icons">delete_forever</i></a>
+					</th>
+				</tr>
+			</tbody>
+		</table>
+	</section>
 </div>
