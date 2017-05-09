@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpModule } from '@angular/http';
 import { Routes, RouterModule } from '@angular/router';
 
 
@@ -12,6 +13,9 @@ import { SideNavComponent } from './side-nav/side-nav.component';
 import { HomeComponent } from './home/home.component';
 import { SuggestionsComponent } from './suggestions/suggestions.component';
 import { ManageServicesComponent } from './manage-services/manage-services.component';
+
+/* Services */
+import { TypeSuggestionService } from './services/type-suggestion.service';
 
 const routes : Routes = [
 							{ path: '', children : 
@@ -28,9 +32,11 @@ const routedComponents = [ HomeComponent, SuggestionsComponent, ManageServicesCo
 @NgModule({
 	imports: [
 		CommonModule,
+		HttpModule,
 		MaterializeModule,
 		RouterModule.forChild(routes)
 	],
+	providers: [ TypeSuggestionService ],
 	declarations: [routedComponents, TopBarComponent, SideNavComponent]
 })
 export class DashboardModule { }

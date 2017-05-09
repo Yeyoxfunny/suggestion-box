@@ -5,11 +5,11 @@ import { Component, Input } from '@angular/core';
   template: `
 				<div class="card-content suggestion-service-card-content">
 					<div class="card-icon">
-						<a href=""><img src="assets/images/home/icons/{{image}}"></a>
+						<a href=""><img src="assets/images/home/icons/{{imageUri}}"></a>
 					</div>
 					<div class="card-content-info">
 						<a routerLink="contact/{{id}}"><h3>{{ title }}</h3></a>
-						<p>{{ description }}</p>
+						<p>{{ caption }}</p>
 					</div>
 				</div>
   			`
@@ -24,8 +24,8 @@ export class SuggestionServiceComponent{
 	title : string;
 
 	@Input()
-	description : string;
+	caption : string;
 
 	@Input()
-	image : string;
+	imageUri : string;
 }

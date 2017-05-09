@@ -12,18 +12,25 @@
 				<div class="row">
 					<div class="input-field col s12">
 						<input id="title" type="text" class="validate">
-          				<label for="title">Título</label>
+						<label for="title">Título</label>
 					</div>
 					<div class="input-field col s12">
 						<input id="caption" type="text" class="validate">
-          				<label for="caption">Descripción</label>
+						<label for="caption">Descripción</label>
 					</div>
-					<div class="col s12">
-						<input type="file">
+					<div class="file-field input-field col s12">
+						<div class="btn light-blue darken-4">
+							<span>File</span>
+							<input type="file">	
+						</div>
+						<div class="file-path-wrapper">
+							<input class="file-path validate" type="text">
+						</div>
 					</div>
 					<div class="col s12">
 						<a class="waves-effect waves-light btn">Agregar</a>
-						<a class="waves-effect waves-light btn" (click)="hideNewItemForm()">Cancelar</a>
+						<a class="waves-effect waves-light btn  red accent-2"
+							(click)="hideNewItemForm()">Cancelar</a>
 					</div>
 				</div>
 			</form>
@@ -41,14 +48,18 @@
 			<tbody>
 				<tr *ngFor="let typeSuggestion of TypeSuggestions">
 					<th>
-						<img src="/assets/images/home/icons/{{typeSuggestion.image}}" class="circle responsive-img" style="width: 70px;">
+						<img src="/assets/images/home/icons/{{typeSuggestion.imageUri}}" class="circle responsive-img" style="width: 70px;">
 					</th>
 					<th>{{typeSuggestion.id}}</th>
 					<th>{{ typeSuggestion.title }}</th>
-					<th>{{ typeSuggestion.description }}</th>
+					<th>{{ typeSuggestion.caption }}</th>
 					<th>
-						<a class="waves-effect waves-light btn"><i class="material-icons">mode_edit</i></a>
-						<a class="waves-effect waves-light btn"><i class="material-icons">delete_forever</i></a>
+						<a class="waves-effect waves-light btn amber accent-3">
+							<i class="material-icons">mode_edit</i>
+						</a>
+						<a class="waves-effect waves-light btn red accent-2">
+							<i class="material-icons">delete_forever</i>
+						</a>
 					</th>
 				</tr>
 			</tbody>

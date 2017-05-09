@@ -1,7 +1,9 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
 
-import { ISuggestionServiceCard } from '../../models/ISuggestionServiceCard';
+import { ITypeSuggestion } from '../../models/ITypeSuggestion';
 import { SUGGESTIONS_SERVICE_CARD } from '../../common/mock-suggestion-service-card';
+
+import { TypeSuggestionService } from '../services/type-suggestion.service';
 
 @Component({
 	selector: 'app-manage-services',
@@ -10,15 +12,19 @@ import { SUGGESTIONS_SERVICE_CARD } from '../../common/mock-suggestion-service-c
 })
 export class ManageServicesComponent implements OnInit {
 
-	TypeSuggestions : ISuggestionServiceCard[];
+	TypeSuggestions : ITypeSuggestion[];
 
 	hideElement : boolean = true;
 
-	constructor() {
+	constructor(private typeSuggestionService : TypeSuggestionService) {
 	}
 
 	ngOnInit() {
-		this.TypeSuggestions = SUGGESTIONS_SERVICE_CARD;
+		this.typeSuggestionService
+					.getAllTypeSuggestions()
+					.subscribe(typeSuggestionsData => {
+						console.log(typeSuggestionsData)
+						this.TypeSuggestions = typeSuggestionsData});
 	}
 
 	showNewItemForm(){

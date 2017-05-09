@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { ISuggestionServiceCard } from '../../models/ISuggestionServiceCard';
+import { ITypeSuggestion } from '../../models/ITypeSuggestion';
 
 import { ContactService } from '../../services/contact.service';
 
@@ -13,7 +13,7 @@ import { ContactService } from '../../services/contact.service';
 })
 export class ContactComponent implements OnInit {
 
-	suggestionCard : ISuggestionServiceCard;
+	suggestionCard : ITypeSuggestion;
 
 	private route : ActivatedRoute;
 	private contactService : ContactService;

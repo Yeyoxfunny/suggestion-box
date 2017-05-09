@@ -1,28 +1,28 @@
-import { ISuggestionServiceCard } from '../models/ISuggestionServiceCard';
+import { ITypeSuggestion } from '../models/ITypeSuggestion';
 
-export const SUGGESTIONS_SERVICE_CARD : ISuggestionServiceCard[] = [
+export const SUGGESTIONS_SERVICE_CARD : ITypeSuggestion[] = [
 		{ 
 			id : 1,
 			title : 'Sugerencias de la charla', 
-			description : '¿Tienes algún comentario acerca de la charla?',
-			image : 'icon_1.svg'
+			caption : '¿Tienes algún comentario acerca de la charla?',
+			imageUri : 'icon_1.svg'
 		},
 		{
 			id : 2, 
 			title : 'Sugerencias al instructor', 
-			description : '¿Deseas sugerir algún comentario al instructor?',
-			image : 'icon_2.png'
+			caption : '¿Deseas sugerir algún comentario al instructor?',
+			imageUri : 'icon_2.png'
 		},
 		{
 			id : 3, 
 			title : '¿Tienes preguntas?', 
-			description : '¿En qué podemos ayudarte?',
-			image : 'icon_3.png'
+			caption : '¿En qué podemos ayudarte?',
+			imageUri : 'icon_3.png'
 		},
 		{ 
 			id : 4,
 			title : 'Feedback', 
-			description : 'Envíanos alguna retroalimentación.',
-			image : 'icon_4.png'
+			caption : 'Envíanos alguna retroalimentación.',
+			imageUri : 'icon_4.png'
 		}
 	];

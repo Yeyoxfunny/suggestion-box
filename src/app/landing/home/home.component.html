@@ -11,11 +11,11 @@
 <div class="container m-top-space">
 	<div class="row card-container">
 		<app-suggestion-service
-			*ngFor="let suggestionCard of suggestionsCard"
+			*ngFor="let suggestionCard of typeSuggestions"
 			[id]="suggestionCard.id"
 			[title]="suggestionCard.title"
-			[description]="suggestionCard.description"
-			[image]="suggestionCard.image"
+			[caption]="suggestionCard.caption"
+			[imageUri]="suggestionCard.imageUri"
 			class="card col s12 m5">
 				
 		</app-suggestion-service>

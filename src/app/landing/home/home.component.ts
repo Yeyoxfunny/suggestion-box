@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { SUGGESTIONS_SERVICE_CARD } from '../../common/mock-suggestion-service-card';
-import { ISuggestionServiceCard } from '../../models/ISuggestionServiceCard';
+import { ITypeSuggestion } from '../../models/ITypeSuggestion';
 
 import { ContactService } from '../../services/contact.service';
 
@@ -13,12 +13,12 @@ import { ContactService } from '../../services/contact.service';
 })
 
 export class HomeComponent implements OnInit{
-	suggestionsCard : ISuggestionServiceCard[];
+	typeSuggestions : ITypeSuggestion[];
 
 	constructor(private contactService : ContactService){
 	}
 
 	ngOnInit(){
-		this.suggestionsCard = this.contactService.getAllSuggestionsCards();
+		this.typeSuggestions = this.contactService.getAllSuggestionsCards();
 	}
 }
