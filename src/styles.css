@@ -99,11 +99,13 @@
 	margin-bottom: 30px;
 }
 .myForm .validation{
-	margin-left: 3rem;
 	font-size: .8rem;
 }
 .myForm .error{
 	color: #F44336;
+}
+.myForm .input-field i ~ span{
+	margin-left: 3rem;
 }
 
 /* DASHBOARD */

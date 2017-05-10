@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -33,6 +34,7 @@ const routedComponents = [ HomeComponent, SuggestionsComponent, ManageServicesCo
 	imports: [
 		CommonModule,
 		HttpModule,
+		FormsModule,
 		MaterializeModule,
 		RouterModule.forChild(routes)
 	],

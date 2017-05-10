@@ -5,30 +5,36 @@
 	
 	<section id="content" class="container animated zoomIn">
 		<div class="m-top-space">
-			<a class="waves-effect waves-light btn" (click)="showNewItemForm()"><i class="material-icons left">add</i>Nuevo</a>
-			<form action="" class="container animated " 
-				[ngClass]="{'fadeInDown': !hideElement, 'fadeInUp': hideElement }"
-				[hidden]="hideElement">
+			<a class="waves-effect waves-light btn" (click)="showNewItemForm()">
+				<i class="material-icons left">add</i>Nuevo
+			</a>
+			<form class="container myForm animated"
+				#newItemForm="ngForm"
+				[hidden]="hideElement"
+				(ngSubmit)="onSubmit(newItemForm.value)"
+				novalidate>
 				<div class="row">
 					<div class="input-field col s12">
-						<input id="title" type="text" class="validate">
+						<input id="title" type="text" name="title" required #title="ngModel" ngModel>
 						<label for="title">Título</label>
+						<span [hidden]="title.valid || title.pristine" class="validation error">Por favor ingresa un título</span>
 					</div>
 					<div class="input-field col s12">
-						<input id="caption" type="text" class="validate">
+						<input id="caption" type="text" name="caption" required #caption="ngModel" ngModel>
 						<label for="caption">Descripción</label>
+						<span [hidden]="caption.valid || caption.pristine" class="validation error">Por favor ingresa una descripción</span>
 					</div>
 					<div class="file-field input-field col s12">
 						<div class="btn light-blue darken-4">
 							<span>File</span>
-							<input type="file">	
+							<input type="file" name="image" (change)="fileChangeEvent($event)">	
 						</div>
 						<div class="file-path-wrapper">
-							<input class="file-path validate" type="text">
+							<input class="file-path" type="text">
 						</div>
 					</div>
 					<div class="col s12">
-						<a class="waves-effect waves-light btn">Agregar</a>
+						<button type="submit" class="waves-effect waves-light btn">Agregar</button>
 						<a class="waves-effect waves-light btn  red accent-2"
 							(click)="hideNewItemForm()">Cancelar</a>
 					</div>
@@ -48,7 +54,7 @@
 			<tbody>
 				<tr *ngFor="let typeSuggestion of TypeSuggestions">
 					<th>
-						<img src="/assets/images/home/icons/{{typeSuggestion.imageUri}}" class="circle responsive-img" style="width: 70px;">
+						<img src="{{typeSuggestion.imageUri}}" class="circle responsive-img" style="width: 70px;">
 					</th>
 					<th>{{typeSuggestion.id}}</th>
 					<th>{{ typeSuggestion.title }}</th>

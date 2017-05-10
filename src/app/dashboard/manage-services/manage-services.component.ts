@@ -8,11 +8,12 @@ import { TypeSuggestionService } from '../services/type-suggestion.service';
 @Component({
 	selector: 'app-manage-services',
 	templateUrl: './manage-services.component.html',
-	styles: []
+	styleUrls: ['./manage-services.component.css'],
 })
 export class ManageServicesComponent implements OnInit {
 
 	TypeSuggestions : ITypeSuggestion[];
+	fileToUpload : File;
 
 	hideElement : boolean = true;
 
@@ -25,6 +26,19 @@ export class ManageServicesComponent implements OnInit {
 					.subscribe(typeSuggestionsData => {
 						console.log(typeSuggestionsData)
 						this.TypeSuggestions = typeSuggestionsData});
+	}
+
+	onSubmit(values: any){
+		console.log(values);
+	}
+
+	fileChangeEvent(fileInput : any){
+		this.fileToUpload = fileInput.target.files[0];
+
+		this.typeSuggestionService
+					.uploadFileAndGetLocation(this.fileToUpload)
+					.then(console.log)
+					.catch(console.error);
 	}
 
 	showNewItemForm(){
