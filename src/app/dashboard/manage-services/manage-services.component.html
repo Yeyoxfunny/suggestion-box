@@ -5,41 +5,9 @@
 	
 	<section id="content" class="container animated zoomIn">
 		<div class="m-top-space">
-			<a class="waves-effect waves-light btn" (click)="showNewItemForm()">
+			<a class="waves-effect waves-light btn" (click)="openModal()">
 				<i class="material-icons left">add</i>Nuevo
 			</a>
-			<form class="container myForm animated"
-				#newItemForm="ngForm"
-				[hidden]="hideElement"
-				(ngSubmit)="onSubmit(newItemForm.value)"
-				novalidate>
-				<div class="row">
-					<div class="input-field col s12">
-						<input id="title" type="text" name="title" required #title="ngModel" ngModel>
-						<label for="title">Título</label>
-						<span [hidden]="title.valid || title.pristine" class="validation error">Por favor ingresa un título</span>
-					</div>
-					<div class="input-field col s12">
-						<input id="caption" type="text" name="caption" required #caption="ngModel" ngModel>
-						<label for="caption">Descripción</label>
-						<span [hidden]="caption.valid || caption.pristine" class="validation error">Por favor ingresa una descripción</span>
-					</div>
-					<div class="file-field input-field col s12">
-						<div class="btn light-blue darken-4">
-							<span>File</span>
-							<input type="file" name="image" (change)="fileChangeEvent($event)">	
-						</div>
-						<div class="file-path-wrapper">
-							<input class="file-path" type="text">
-						</div>
-					</div>
-					<div class="col s12">
-						<button type="submit" class="waves-effect waves-light btn">Agregar</button>
-						<a class="waves-effect waves-light btn  red accent-2"
-							(click)="hideNewItemForm()">Cancelar</a>
-					</div>
-				</div>
-			</form>
 		</div>
 		<table>
 			<thead>
@@ -60,7 +28,7 @@
 					<th>{{ typeSuggestion.title }}</th>
 					<th>{{ typeSuggestion.caption }}</th>
 					<th>
-						<a class="waves-effect waves-light btn amber accent-3">
+						<a class="waves-effect waves-light btn amber accent-3" (click)="openModal()">
 							<i class="material-icons">mode_edit</i>
 						</a>
 						<a class="waves-effect waves-light btn red accent-2">
@@ -71,4 +39,40 @@
 			</tbody>
 		</table>
 	</section>
+</div>
+
+
+<div id="modal1" class="modal" materialize="modal" [materializeParams]="[{dismissible: false}]" [materializeActions]="modalActions">
+	<div class="modal-content">
+		<header>
+			<h5 class="center">Tipo de Sugerencia</h5>
+		</header>
+		<div class="divider"></div>
+		<form class="container myForm m-top-space">
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="title" type="text" name="title" required>
+						<label for="title">Título</label>
+					</div>
+					<div class="input-field col s12">
+						<input id="caption" type="text" name="caption" required>
+						<label for="caption">Descripción</label>
+					</div>
+					<div class="file-field input-field col s12">
+						<div class="btn light-blue darken-4">
+							<span>File</span>
+							<input type="file" name="image">
+						</div>
+						<div class="file-path-wrapper">
+							<input class="file-path" type="text">
+						</div>
+					</div>
+				</div>
+			</form>
+  	</div>
+  	<div class="modal-footer">
+		<a class="waves-effect waves-green btn-flat" (click)="closeModal()">Cancelar</a>
+		<a class="modal-action modal-close waves-effect waves-green btn-flat">Guardar</a>
+		<a class="modal-action modal-close waves-effect waves-green btn-flat">Actualizar</a>
+  	</div>
 </div>

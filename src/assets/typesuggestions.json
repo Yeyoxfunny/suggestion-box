@@ -1,0 +1,26 @@
+[
+	{ 
+		"id" : 1,
+		"title" : "Sugerencias de la charla", 
+		"caption" : "¿Tienes algún comentario acerca de la charla?",
+		"imageUri" : "http://localhost:4200/assets/images/home/icons/icon_1.svg"
+	},
+	{
+		"id" : 2, 
+		"title" : "Sugerencias al instructor",
+		"caption" : "¿Deseas sugerir algún comentario al instructor?",
+		"imageUri" : "http://localhost:4200/assets/images/home/icons/icon_2.png"
+	},
+	{
+		"id" : 3, 
+		"title" : "¿Tienes preguntas?",
+		"caption" : "¿En qué podemos ayudarte?",
+		"imageUri" : "http://localhost:4200/assets/images/home/icons/icon_3.png"
+	},
+	{ 
+		"id" : 4,
+		"title" : "Feedback",
+		"caption" : "Envíanos alguna retroalimentación.",
+		"imageUri" : "http://localhost:4200/assets/images/home/icons/icon_4.png"
+	}
+]
