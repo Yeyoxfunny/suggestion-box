@@ -5,8 +5,9 @@ import { TypeSuggestionService } from '../services/type-suggestion.service';
 import { FileUploadService } from '../../services/file-upload.service';
 
 import { TypeSuggestionModalComponent } from './type-suggestion-modal/type-suggestion-modal.component';
+import { ConfirmModalComponent } from './confirm-modal/confirm-modal.component';
 
-import { MaterializeAction } from 'angular2-materialize';
+import { MaterializeAction } from 'angular2-materialize'
 
 @Component({
 	selector: 'app-manage-services',
@@ -18,6 +19,7 @@ export class TypeSuggestionsComponent implements OnInit {
 	TypeSuggestions : ITypeSuggestion[];
 
 	@ViewChild(TypeSuggestionModalComponent) typeSuggestionModal : TypeSuggestionModalComponent;
+	@ViewChild(ConfirmModalComponent) confirmModal : ConfirmModalComponent;
 
 	constructor(
 		private typeSuggestionService : TypeSuggestionService,
@@ -31,12 +33,12 @@ export class TypeSuggestionsComponent implements OnInit {
 						this.TypeSuggestions = typeSuggestionsData});
 	}
 
-	openModal(typeSuggestion){
+	openNewItemModal(typeSuggestion){
 		this.typeSuggestionModal.openModal(typeSuggestion);
 	}
 
-	closeModal(){
-		this.typeSuggestionModal.closeModal();
+	openConfirmModal(){
+		this.confirmModal.openModal();
 	}
 }
 

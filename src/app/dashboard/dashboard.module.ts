@@ -18,6 +18,7 @@ import { TypeSuggestionsComponent } from './type-suggestions/type-suggestions.co
 /* Services */
 import { TypeSuggestionService } from './services/type-suggestion.service';
 import { TypeSuggestionModalComponent } from './type-suggestions/type-suggestion-modal/type-suggestion-modal.component';
+import { ConfirmModalComponent } from './type-suggestions/confirm-modal/confirm-modal.component';
 
 const routes : Routes = [
 							{ path: '', children : 
@@ -40,6 +41,6 @@ const routedComponents = [ HomeComponent, SuggestionsComponent, TypeSuggestionsC
 		RouterModule.forChild(routes)
 	],
 	providers: [ TypeSuggestionService ],
-	declarations: [routedComponents, TopBarComponent, SideNavComponent, TypeSuggestionModalComponent]
+	declarations: [routedComponents, TopBarComponent, SideNavComponent, TypeSuggestionModalComponent, ConfirmModalComponent]
 })
 export class DashboardModule { }
