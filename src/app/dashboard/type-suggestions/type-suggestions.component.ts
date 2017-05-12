@@ -1,24 +1,21 @@
-import { Component, OnInit, EventEmitter } from '@angular/core';
+import { Component, OnInit, EventEmitter} from '@angular/core';
 
 import { ITypeSuggestion } from '../../models/ITypeSuggestion';
-import { SUGGESTIONS_SERVICE_CARD } from '../../common/mock-suggestion-service-card';
-
 import { TypeSuggestionService } from '../services/type-suggestion.service';
 import { FileUploadService } from '../../services/file-upload.service';
+
 import { MaterializeAction } from 'angular2-materialize';
 
 @Component({
 	selector: 'app-manage-services',
-	templateUrl: './manage-services.component.html',
-	styleUrls: ['./manage-services.component.css'],
+	templateUrl: './type-suggestions.component.html',
+	styleUrls: ['./type-suggestions.component.css'],
 	providers: [ FileUploadService ]
 })
-export class ManageServicesComponent implements OnInit {
+export class TypeSuggestionsComponent implements OnInit {
 
 	TypeSuggestions : ITypeSuggestion[];
 	fileToUpload : File;
-
-	hideElement : boolean = true;
 
 	modalActions = new EventEmitter<string | MaterializeAction>();
 
@@ -49,18 +46,13 @@ export class ManageServicesComponent implements OnInit {
 		this.fileToUpload = fileInput.target.files[0];
 	}
 
-	showNewItemForm(){
-		this.hideElement = false;
-	}
-
-	hideNewItemForm(){
-		this.hideElement = true;
-	}
-
-	openModal(){
+	openModal(typeSuggestion){
+		console.log(typeSuggestion);
 		this.modalActions.emit({ action: "modal", params: ['open'] });
 	}
+	
 	closeModal(){
 		this.modalActions.emit({ action: "modal", params: ['close'] });
 	}
 }
+

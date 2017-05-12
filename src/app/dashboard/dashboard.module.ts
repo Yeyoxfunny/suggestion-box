@@ -13,7 +13,7 @@ import { SideNavComponent } from './side-nav/side-nav.component';
 
 import { HomeComponent } from './home/home.component';
 import { SuggestionsComponent } from './suggestions/suggestions.component';
-import { ManageServicesComponent } from './manage-services/manage-services.component';
+import { TypeSuggestionsComponent } from './type-suggestions/type-suggestions.component';
 
 /* Services */
 import { TypeSuggestionService } from './services/type-suggestion.service';
@@ -22,13 +22,13 @@ const routes : Routes = [
 							{ path: '', children : 
 								[
 									{ path: '', component: HomeComponent },
-									{ path: 'manage-services', component: ManageServicesComponent },
+									{ path: 'type-suggestions', component: TypeSuggestionsComponent },
 									{ path: 'suggestions', component: SuggestionsComponent }
 								]
 							}
 						];
 
-const routedComponents = [ HomeComponent, SuggestionsComponent, ManageServicesComponent ];
+const routedComponents = [ HomeComponent, SuggestionsComponent, TypeSuggestionsComponent ];
 
 @NgModule({
 	imports: [

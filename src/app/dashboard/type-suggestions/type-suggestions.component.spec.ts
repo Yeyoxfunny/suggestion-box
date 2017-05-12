@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ManageServicesComponent } from './manage-services.component';
+import { TypeSuggestionsComponent } from './type-suggestions.component';
 
-describe('ManageServicesComponent', () => {
-  let component: ManageServicesComponent;
-  let fixture: ComponentFixture<ManageServicesComponent>;
+describe('TypeSuggestionsComponent', () => {
+  let component: TypeSuggestionsComponent;
+  let fixture: ComponentFixture<TypeSuggestionsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ManageServicesComponent ]
+      declarations: [ TypeSuggestionsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ManageServicesComponent);
+    fixture = TestBed.createComponent(TypeSuggestionsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
