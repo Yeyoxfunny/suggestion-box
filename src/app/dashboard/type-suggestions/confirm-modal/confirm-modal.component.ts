@@ -1,6 +1,8 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
 import { MaterializeAction } from 'angular2-materialize'
 
+import { TypeSuggestionService } from '../../services/type-suggestion.service';
+
 @Component({
   selector: 'app-confirm-modal',
   template: `
@@ -13,7 +15,8 @@ import { MaterializeAction } from 'angular2-materialize'
 						<p>¿Estas seguro de que quieres eliminar este item?</p>
 					</div>
 					<div class="modal-footer">
-						<a class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
+						<a class="modal-action modal-close waves-effect waves-green btn-flat"
+							(click)="deleteTypeSuggestion()">Aceptar</a>
 						<a class="modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
 					</div>
 				</div>
@@ -24,16 +27,29 @@ export class ConfirmModalComponent implements OnInit {
 
 	modalActions = new EventEmitter<string | MaterializeAction>();
 	
-	constructor() { }
+	private idTypeSuggestion: number;
+
+	constructor(private typeSuggestionService: TypeSuggestionService) { }
 
 	ngOnInit() {
 	}
 
-	openModal(){
+
+	deleteTypeSuggestion(){
+		this.typeSuggestionService
+				.deleteTypeSuggestion(this.idTypeSuggestion)
+				.then(console.log)
+				.catch(console.error);
+	}
+
+	openModal(id: number){
+		this.idTypeSuggestion = id;
+
 		this.modalActions.emit({ action: "modal", params: ['open'] });
 	}
 
 	closeModal(){
+		console.log(this.idTypeSuggestion);
 		this.modalActions.emit({ action: "modal", params: ['close'] });
 	}
 

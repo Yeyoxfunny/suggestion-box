@@ -17,28 +17,27 @@ import { MaterializeAction } from 'angular2-materialize'
 export class TypeSuggestionsComponent implements OnInit {
 
 	TypeSuggestions : ITypeSuggestion[];
-
+	
 	@ViewChild(TypeSuggestionModalComponent) typeSuggestionModal : TypeSuggestionModalComponent;
 	@ViewChild(ConfirmModalComponent) confirmModal : ConfirmModalComponent;
 
-	constructor(
-		private typeSuggestionService : TypeSuggestionService,
-		private fileUploadService : FileUploadService) {
+	constructor(private typeSuggestionService : TypeSuggestionService) {
 	}
 
 	ngOnInit() {
 		this.typeSuggestionService
 					.getAllTypeSuggestions()
-					.subscribe(typeSuggestionsData => {
-						this.TypeSuggestions = typeSuggestionsData});
+					.then(typeSuggestionsData => this.TypeSuggestions = typeSuggestionsData)
+					.catch(console.error);
+					
 	}
 
 	openNewItemModal(typeSuggestion){
 		this.typeSuggestionModal.openModal(typeSuggestion);
 	}
 
-	openConfirmModal(){
-		this.confirmModal.openModal();
+	openConfirmModal(id: number){
+		this.confirmModal.openModal(id);
 	}
 }
 

@@ -26,7 +26,7 @@
 							<img src="{{imageUri}}" class="circle responsive-img" style="max-width: 74px;">
 						</div>
 						<div *ngIf="!changeImage">
-							<a class="waves-effect waves-light btn light-blue darken-4" 
+							<a class="waves-effect waves-light btn light-blue darken-4 m-medium-space" 
 							(click)="onChangeImage()">
 							Cambiar Imagen</a>
 						</div>
@@ -47,10 +47,10 @@
 			</form>
   	</div>
   	<div class="modal-footer">
-		<a class="waves-effect waves-green btn-flat" (click)="close(myForm)">Cancelar</a>
 		<a *ngIf="isCreate" class="modal-action modal-close waves-effect waves-green btn-flat"
 		(click)="saveTypeSuggestion(myForm.value)">Guardar</a>
 		<a *ngIf="!isCreate" class="modal-action modal-close waves-effect waves-green btn-flat"
 		(click)="updateTypeSuggestion(myForm.value)">Actualizar</a>
+		<a class="waves-effect waves-red btn-flat" (click)="close(myForm)">Cancelar</a>
   	</div>
 </div>

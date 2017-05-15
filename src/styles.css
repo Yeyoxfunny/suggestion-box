@@ -2,9 +2,11 @@
 .m-space{
 	margin: 1rem;
 }
-
 .m-top-space{
 	margin-top: 1rem;
+}
+.m-medium-space{
+	margin-top: 2.5rem;
 }
 .m-bottom-space{
 	margin-bottom: 1rem;
