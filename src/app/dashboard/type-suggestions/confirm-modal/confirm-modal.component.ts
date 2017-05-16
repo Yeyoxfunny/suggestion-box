@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MaterializeAction } from 'angular2-materialize'
 
 import { TypeSuggestionService } from '../../services/type-suggestion.service';
@@ -27,18 +27,20 @@ export class ConfirmModalComponent implements OnInit {
 
 	modalActions = new EventEmitter<string | MaterializeAction>();
 	
-	private idTypeSuggestion: number;
+	idTypeSuggestion: number;
+	@Output('deleted') typeSuggestionDeleted = new EventEmitter();
 
 	constructor(private typeSuggestionService: TypeSuggestionService) { }
 
 	ngOnInit() {
 	}
 
-
 	deleteTypeSuggestion(){
 		this.typeSuggestionService
 				.deleteTypeSuggestion(this.idTypeSuggestion)
-				.then(console.log)
+				.then(response =>{
+					this.typeSuggestionDeleted.emit(this.idTypeSuggestion);
+				})
 				.catch(console.error);
 	}
 

@@ -5,7 +5,7 @@
 	
 	<section id="content" class="container animated zoomIn">
 		<div class="m-top-space">
-			<a class="waves-effect waves-light btn light-blue darken-4" (click)="openNewItemModal()">
+			<a class="waves-effect waves-light btn light-blue darken-4" (click)="openInsertModal()">
 				<i class="material-icons left">add</i>Nuevo
 			</a>
 		</div>
@@ -29,7 +29,7 @@
 					<th>{{ typeSuggestion.caption }}</th>
 					<th>
 						<a class="waves-effect waves-light btn amber accent-3" 
-							(click)="openNewItemModal(typeSuggestion)">
+							(click)="openUpdateModal(typeSuggestion)">
 							<i class="material-icons">mode_edit</i>
 						</a>
 						<a class="waves-effect waves-light btn red accent-2"
@@ -43,5 +43,6 @@
 	</section>
 </div>
 
-<app-type-suggestion-modal></app-type-suggestion-modal>
-<app-confirm-modal></app-confirm-modal>
+<app-confirm-modal (deleted)="handleDeleted($event)"></app-confirm-modal>
+<app-insert-modal (inserted)="handleInserted($event)"></app-insert-modal>
+<app-update-modal (updated)="handleUpdated($event)"></app-update-modal>

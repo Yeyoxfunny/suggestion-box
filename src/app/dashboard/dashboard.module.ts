@@ -13,12 +13,15 @@ import { SideNavComponent } from './side-nav/side-nav.component';
 
 import { HomeComponent } from './home/home.component';
 import { SuggestionsComponent } from './suggestions/suggestions.component';
+
 import { TypeSuggestionsComponent } from './type-suggestions/type-suggestions.component';
+import { ConfirmModalComponent } from './type-suggestions/confirm-modal/confirm-modal.component';
+import { UpdateModalComponent } from './type-suggestions/update-modal/update-modal.component';
+import { InsertModalComponent } from './type-suggestions/insert-modal/insert-modal.component';
 
 /* Services */
 import { TypeSuggestionService } from './services/type-suggestion.service';
-import { TypeSuggestionModalComponent } from './type-suggestions/type-suggestion-modal/type-suggestion-modal.component';
-import { ConfirmModalComponent } from './type-suggestions/confirm-modal/confirm-modal.component';
+
 
 const routes : Routes = [
 							{ path: '', children : 
@@ -41,6 +44,9 @@ const routedComponents = [ HomeComponent, SuggestionsComponent, TypeSuggestionsC
 		RouterModule.forChild(routes)
 	],
 	providers: [ TypeSuggestionService ],
-	declarations: [routedComponents, TopBarComponent, SideNavComponent, TypeSuggestionModalComponent, ConfirmModalComponent]
+	declarations: [routedComponents, 
+						TopBarComponent, 
+						SideNavComponent,  
+						ConfirmModalComponent, UpdateModalComponent, InsertModalComponent]
 })
 export class DashboardModule { }

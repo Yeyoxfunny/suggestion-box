@@ -19,7 +19,9 @@ export class TypeSuggestionService {
 		return this.http
 					.get(this.TYPE_SUGGESTION_URL)
 					.toPromise()
-					.then((response: Response) => response.json())
+					.then((response: Response) => {
+						return response.json()
+					})
 					.catch(this.errorHandler);
 	}
 
@@ -27,12 +29,31 @@ export class TypeSuggestionService {
 		return this.http
 						.post(this.TYPE_SUGGESTION_URL, typeSuggestion)
 						.toPromise()
-						.then(response => response.json())
+						.then((response: Response) => {
+							if(response.status !== 201){
+								return Promise.reject(response);
+							}
+							return response.json();
+						})
 						.catch(this.errorHandler);
 	}
 
+	updateTypeSuggestion(id: number, typeSuggestion): Promise<any>{
+		const uri = this.TYPE_SUGGESTION_URL + id;
+		return this.http
+					.put(uri, typeSuggestion)
+					.toPromise()
+					.then(response => {
+						if(response.status !== 200){
+							Promise.reject(response);
+						}
+						return response.json();
+					})
+					.catch(this.errorHandler);
+	}
+
 	deleteTypeSuggestion(id: number): Promise<any>{
-		let uri = this.TYPE_SUGGESTION_URL + id;
+		const uri = this.TYPE_SUGGESTION_URL + id;
 		return this.http.delete(uri).toPromise().catch(this.errorHandler);
 	}
 

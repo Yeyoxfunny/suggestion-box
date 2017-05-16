@@ -7,16 +7,13 @@
 		<form class="container myForm m-top-space" #myForm="ngForm">
 				<div class="row">
 					<div class="input-field col s12">
-						<input placeholder="" id="title" type="text" name="title" required 
-						 [(ngModel)]="title"
-						 #name="ngModel">
+						<input placeholder="" id="title" type="text" name="title" required #name="ngModel" [(ngModel)]="title">
 						<label for="title">Título</label>
 						<span [hidden]="name.valid || name.pristine" class="validation error">Por favor ingresa un título</span>
 					</div>
 					<div class="input-field col s12">
 						<input placeholder="" id="caption" type="text" name="caption" required
-						[(ngModel)]="caption"
-						#description="ngModel" >
+						#description="ngModel" [(ngModel)]="caption">
 						<label for="caption">Descripción</label>
 						<span [hidden]="description.valid || description.pristine" class="validation error">Por favor ingresa una descripción</span>
 					</div>
@@ -25,13 +22,7 @@
 							<span class="label" style="display: block;">Imagen actual</span>
 							<img src="{{imageUri}}" class="circle responsive-img" style="max-width: 74px;">
 						</div>
-						<div *ngIf="!changeImage">
-							<a class="waves-effect waves-light btn light-blue darken-4 m-medium-space" 
-							(click)="onChangeImage()">
-							Cambiar Imagen</a>
-						</div>
-						<div class="file-field input-field half-bottom-space col s9 animated fadeIn" 
-						*ngIf="changeImage">
+						<div class="file-field input-field half-bottom-space col s9">
 							<div class="btn light-blue darken-4">
 								<span>File</span>
 								<input type="file" name="image" (change)="fileChangeEvent($event)">
@@ -41,16 +32,14 @@
 							</div>
 							<span [hidden]="isValidFile" class="validation error">Archivo no soportado, extensiones válidas: gif, png, jpg, jpeg</span>
 						</div>
-					</div>
-					
+					</div>				
 				</div>
 			</form>
-  	</div>
-  	<div class="modal-footer">
-		<a *ngIf="isCreate" class="modal-action modal-close waves-effect waves-green btn-flat"
-		(click)="saveTypeSuggestion(myForm.value)">Guardar</a>
-		<a *ngIf="!isCreate" class="modal-action modal-close waves-effect waves-green btn-flat"
-		(click)="updateTypeSuggestion(myForm.value)">Actualizar</a>
-		<a class="waves-effect waves-red btn-flat" (click)="close(myForm)">Cancelar</a>
-  	</div>
+	</div>
+	<div class="modal-footer">
+		<a class="modal-action modal-close waves-effect waves-green btn-flat"
+		(click)="onSubmit()">Guardar</a>
+		<a class="waves-effect waves-red btn-flat" (click)="closeAndReset(myForm)">Cancelar</a>
+		  <div class="preloader-wrapper small active">
+	</div>
 </div>

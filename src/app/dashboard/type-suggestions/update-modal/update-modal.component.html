@@ -1,0 +1,51 @@
+<div id="modal1" class="modal" materialize="modal" [materializeParams]="[{dismissible: false}]" [materializeActions]="modalActions">
+	<div class="modal-content">
+		<header>
+			<h5 class="center">Tipo de Sugerencia</h5>
+		</header>
+		<div class="divider"></div>
+		<form class="container myForm m-top-space" #myForm="ngForm">
+				<div class="row">
+					<div class="input-field col s12">
+						<input placeholder="" id="title" type="text" name="title" required #name="ngModel" [(ngModel)]="title">
+						<label for="title">Título</label>
+						<span [hidden]="name.valid || name.pristine" class="validation error">Por favor ingresa un título</span>
+					</div>
+					<div class="input-field col s12">
+						<input placeholder="" id="caption" type="text" name="caption" required
+						#description="ngModel" [(ngModel)]="caption">
+						<label for="caption">Descripción</label>
+						<span [hidden]="description.valid || description.pristine" class="validation error">Por favor ingresa una descripción</span>
+					</div>
+					<div>
+						<div class="col s3">
+							<span class="label" style="display: block;">Imagen actual</span>
+							<img src="{{imageUri}}" class="circle responsive-img" style="max-width: 74px;">
+						</div>
+						<div *ngIf="!changeImage">
+							<a class="waves-effect waves-light btn light-blue darken-4 m-medium-space" 
+							(click)="onChangeImage()">
+							Cambiar Imagen</a>
+						</div>
+						<div class="file-field input-field half-bottom-space col s9 animated fadeIn"
+							*ngIf="changeImage">
+							<div class="btn light-blue darken-4">
+								<span>File</span>
+								<input type="file" name="image" (change)="fileChangeEvent($event)">
+							</div>
+							<div class="file-path-wrapper">
+								<input class="file-path" type="text">
+							</div>
+							<span [hidden]="isValidFile" class="validation error">Archivo no soportado, extensiones válidas: gif, png, jpg, jpeg</span>
+						</div>
+					</div>				
+				</div>
+			</form>
+	</div>
+	<div class="modal-footer">
+		<a class="modal-action modal-close waves-effect waves-green btn-flat"
+		(click)="onSubmit()">Actualizar</a>
+		<a class="waves-effect waves-red btn-flat" (click)="closeModal()">Cancelar</a>
+		  <div class="preloader-wrapper small active">
+	</div>
+</div>
