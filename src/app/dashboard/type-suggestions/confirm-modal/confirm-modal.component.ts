@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MaterializeAction } from 'angular2-materialize'
 
-import { TypeSuggestionService } from '../../services/type-suggestion.service';
+import { TypeSuggestionService } from '../../../services/type-suggestion.service';
 
 @Component({
   selector: 'app-confirm-modal',

@@ -3,21 +3,21 @@ import { Http, Response } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { ITypeSuggestion } from '../../models/ITypeSuggestion';
+import { ITypeSuggestion } from '../models/ITypeSuggestion';
 
 @Injectable()
 export class TypeSuggestionService {
 
-	private TYPE_SUGGESTION_URL : string = "http://localhost:60024/api/TypeSuggestions/";
-	//private TYPE_SUGGESTION_URL : string = "http://localhost:4200/assets/typesuggestions.json";
-	private IMAGE_TYPE_SUGGESTION_URL : string = this.TYPE_SUGGESTION_URL + "thumbnail";
+	private typeSuggestionUrl: string = "http://localhost:60024/api/TypeSuggestions/";
+	//private typeSuggestionUrl : string = "http://localhost:4200/assets/typesuggestions.json";
+	private imageTypeSuggestionUrl: string = this.typeSuggestionUrl + "thumbnail";
 	
 	constructor(private http : Http) {
 	}
 
 	getAllTypeSuggestions(): Promise<ITypeSuggestion[]>{
 		return this.http
-					.get(this.TYPE_SUGGESTION_URL)
+					.get(this.typeSuggestionUrl)
 					.toPromise()
 					.then((response: Response) => {
 						return response.json()
@@ -25,9 +25,22 @@ export class TypeSuggestionService {
 					.catch(this.errorHandler);
 	}
 
+	getTypeSuggestion(id: number){
+		const url = this.typeSuggestionUrl + id;
+		return this.http
+							.get(url)
+							.toPromise()
+							.then(response => {
+								if(response.status !== 200){
+									return this.errorHandler(response);
+								}
+								return response.json();
+							});
+	}
+
 	insertTypeSuggestion(typeSuggestion): Promise<ITypeSuggestion>{
 		return this.http
-						.post(this.TYPE_SUGGESTION_URL, typeSuggestion)
+						.post(this.typeSuggestionUrl, typeSuggestion)
 						.toPromise()
 						.then((response: Response) => {
 							if(response.status !== 201){
@@ -39,7 +52,7 @@ export class TypeSuggestionService {
 	}
 
 	updateTypeSuggestion(id: number, typeSuggestion): Promise<any>{
-		const uri = this.TYPE_SUGGESTION_URL + id;
+		const uri = this.typeSuggestionUrl + id;
 		return this.http
 					.put(uri, typeSuggestion)
 					.toPromise()
@@ -53,11 +66,11 @@ export class TypeSuggestionService {
 	}
 
 	deleteTypeSuggestion(id: number): Promise<any>{
-		const uri = this.TYPE_SUGGESTION_URL + id;
+		const uri = this.typeSuggestionUrl + id;
 		return this.http.delete(uri).toPromise().catch(this.errorHandler);
 	}
 
-	errorHandler(error: Response){
+	errorHandler(error){
 		return Promise.resolve(error || "Server Error");
 	}
 }

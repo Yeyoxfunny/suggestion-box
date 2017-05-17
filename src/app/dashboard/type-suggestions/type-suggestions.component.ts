@@ -1,7 +1,7 @@
 import { Component, ViewChild, OnInit, EventEmitter } from '@angular/core';
 
 import { ITypeSuggestion } from '../../models/ITypeSuggestion';
-import { TypeSuggestionService } from '../services/type-suggestion.service';
+import { TypeSuggestionService } from '../../services/type-suggestion.service';
 import { FileUploadService } from '../../services/file-upload.service';
 
 import { ConfirmModalComponent } from './confirm-modal/confirm-modal.component';

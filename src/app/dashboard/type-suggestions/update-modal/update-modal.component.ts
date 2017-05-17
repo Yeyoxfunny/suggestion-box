@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output ,OnInit } from '@angular/core';
 
-import { TypeSuggestionService } from '../../services/type-suggestion.service';
+import { TypeSuggestionService } from '../../../services/type-suggestion.service';
 import { FileUploadService } from '../../../services/file-upload.service';
 
 import { MaterializeAction } from 'angular2-materialize';

@@ -1,49 +1,5 @@
-<app-top-bar></app-top-bar>
-<div id="main">
-	<app-side-nav></app-side-nav>
-
-	<section id="content" class="container animated zoomIn">
-		<table>
-			<thead>
-				
-				<tr>
-					<th>Título</th>
-					<th>Nombre</th>
-					<th>Categoría</th>
-					<th>Fecha de creación</th>
-					<th>Estado</th>
-				</tr>
-			</thead>
-
-			<tbody>
-				<tr *ngFor="let suggestion of suggestions">
-					<td>{{ suggestion.topic }}</td>
-					<td>{{ suggestion.username }}</td>
-					<td>{{ suggestion.typeService }}</td>
-					<td>{{ suggestion.creationDate }}</td>
-					<td><i class="material-icons">check_circle</i></td>
-					<td>
-						<a class="cursor-pointer" (click)="openModal(suggestion.id)">Ver detalles</a>
-					</td>
-				</tr>
-			</tbody>
-		</table>
+<section id="content" class="container animated zoomIn">
+	<app-suggestion 
+			*ngFor="let suggestion of suggestions"
+			[suggestion]="suggestion"></app-suggestion>	
 </section>
-</div>
-
-<div id="modal1" class="modal" materialize="modal" [materializeParams]="[{dismissible: false}]" [materializeActions]="modalActions">
-	<div class="modal-content">
-		<h4>{{ currentSuggestion.topic }}</h4>
-		<p><strong>Nombre: </strong>{{ currentSuggestion.username }}</p>
-	 	<p><strong>E-Mail: </strong>{{ currentSuggestion.email }}</p>
-	 	<p><strong>Tipo de sugerencia: </strong>{{currentSuggestion.typeService}}</p>
-		<div>
-			<strong>Descripción:</strong>
-			<p>{{ currentSuggestion.description }}</p>
-		</div>
-  </div>
-  <div class="modal-footer">
-	<a class="waves-effect waves-green btn-flat" (click)="closeModal()">Close</a>
-	<a class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-  </div>
-</div>

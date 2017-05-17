@@ -5,18 +5,35 @@ import { HttpModule } from '@angular/http';
 
 import { Routes, RouterModule } from '@angular/router';
 
+/* App Modules */
 import { LandingModule } from './landing/landing.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+
+/* Components */
 import { AppComponent } from './app.component';
 
-const routes : Routes = [ 
-              { path : '', loadChildren: './landing/landing.module#LandingModule'},
-              { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule'}
-            ];
+/* Suggestion Service */
+import { TypeSuggestionService } from './services/type-suggestion.service';
+import { SuggestionsService } from './services/suggestions.service';
+
+/* App Routes */
+import { DashboardRoutes } from './dashboard/dashboard.router';
+import { LandingRoutes } from './landing/landing.router';
+import { NotFoundComponent } from './not-found/not-found.component';
+
+const routes: Routes = [ 
+                  ...LandingRoutes,
+                  ...DashboardRoutes,
+                  {
+                    path: '**',
+                    component: NotFoundComponent
+                  } 
+                ];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +42,7 @@ const routes : Routes = [
     DashboardModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [  ],
+  providers: [ TypeSuggestionService, SuggestionsService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

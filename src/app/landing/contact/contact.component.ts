@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { ITypeSuggestion } from '../../models/ITypeSuggestion';
-
+import { TypeSuggestionService } from '../../services/type-suggestion.service';
 import { ContactService } from '../../services/contact.service';
 
 @Component({
@@ -13,20 +13,21 @@ import { ContactService } from '../../services/contact.service';
 })
 export class ContactComponent implements OnInit {
 
-	suggestionCard : ITypeSuggestion;
+	typeSuggestion : ITypeSuggestion;
 
-	private route : ActivatedRoute;
-	private contactService : ContactService;
-
-	constructor(route : ActivatedRoute,  contactService : ContactService) { 
-		this.route = route;
-		this.contactService = contactService;
+	constructor(private route : ActivatedRoute,
+					private typeSuggestionService: TypeSuggestionService,
+					private contactService: ContactService) { 
 	}
 
 	ngOnInit() {
 		this.route.params.forEach(params => {
 			let id = +params['id'];
-			this.suggestionCard = this.contactService.getSuggestionCardById(id);
+			/*this.typeSuggestionService
+					.getTypeSuggestion(id)
+					.then(typeSuggestion => this.typeOfSuggestion = typeSuggestion);
+			*/
+			this.typeSuggestion = this.contactService.getSuggestionCardById(id);
 		});
   	}
 
