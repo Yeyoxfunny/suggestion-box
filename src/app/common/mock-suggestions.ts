@@ -8,8 +8,8 @@ export const SUGGESTIONS : ISuggestion[] = [
       email: 'smorales@intergrupo.com',
       description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, nobis. Labore molestias sapiente nemo ad quisquam fugit, debitis, saepe cupiditate suscipit voluptas doloremque ullam. Quos, voluptates beatae. Veritatis, adipisci impedit.',
       creationDate: 'May 6 2017',
-      typeService: 1,
-      state: 'Pendiente'
+      typeSuggestion: 1,
+      stateId: 1
    },
    {
       id: 2,
@@ -18,8 +18,8 @@ export const SUGGESTIONS : ISuggestion[] = [
       email: 'smorales@gmail.com',
       description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, nobis. Labore molestias sapiente nemo ad quisquam fugit, debitis, saepe cupiditate suscipit voluptas doloremque ullam. Quos, voluptates beatae. Veritatis, adipisci impedit.',
       creationDate: 'May 6 2017',
-      typeService: 1,
-      state: 'Pendiente'
+      typeSuggestion: 1,
+      stateId: 1
    },
    {
       id: 3,
@@ -28,8 +28,8 @@ export const SUGGESTIONS : ISuggestion[] = [
       email: 'lui_sm_a11@hotmail.com',
       description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, nobis. Labore molestias sapiente nemo ad quisquam fugit, debitis, saepe cupiditate suscipit voluptas doloremque ullam. Quos, voluptates beatae. Veritatis, adipisci impedit.',
       creationDate: 'May 6 2017',
-      typeService: 1,
-      state: 'Pendiente'
+      typeSuggestion: 1,
+      stateId: 1
    },
       {
       id: 4,
@@ -38,8 +38,8 @@ export const SUGGESTIONS : ISuggestion[] = [
       email: 'anggy@outlook.com',
       description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, nobis. Labore molestias sapiente nemo ad quisquam fugit, debitis, saepe cupiditate suscipit voluptas doloremque ullam. Quos, voluptates beatae. Veritatis, adipisci impedit.',
       creationDate: 'May 6 2017',
-      typeService: 1,
-      state: 'Pendiente'
+      typeSuggestion: 1,
+      stateId: 1
    },
    {
       id: 5,
@@ -48,8 +48,8 @@ export const SUGGESTIONS : ISuggestion[] = [
       email: 'smorales@intergrupo.com',
       description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, nobis. Labore molestias sapiente nemo ad quisquam fugit, debitis, saepe cupiditate suscipit voluptas doloremque ullam. Quos, voluptates beatae. Veritatis, adipisci impedit.',
       creationDate: 'May 6 2017',
-      typeService: 1,
-      state: 'Pendiente'
+      typeSuggestion: 1,
+      stateId: 1
    },
    {
       id: 6,
@@ -58,7 +58,7 @@ export const SUGGESTIONS : ISuggestion[] = [
       email: 'smorales@intergrupo.com',
       description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, nobis. Labore molestias sapiente nemo ad quisquam fugit, debitis, saepe cupiditate suscipit voluptas doloremque ullam. Quos, voluptates beatae. Veritatis, adipisci impedit.',
       creationDate: 'May 6 2017',
-      typeService: 1,
-      state: 'Pendiente'
+      typeSuggestion: 1,
+      stateId: 1
    }
-]
+];

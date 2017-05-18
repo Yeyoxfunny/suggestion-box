@@ -9,7 +9,7 @@
 						<ul>
 							<li>
 								<b>Nombre:</b>
-								<span>{{suggestion.username}}</span>
+								<span>{{suggestion.userName}}</span>
 							</li>
 							<li>
 								<b>E-mail:</b>
@@ -17,11 +17,15 @@
 							</li>
 							<li>
 								<b>Categoría:</b>
-								<span>{{suggestion.typeService}}</span>
+								<span>{{suggestion.typeSuggestionId}}</span>
 							</li>
 							<li>
 								<b>Fecha de creación:</b>
-								<span>{{suggestion.creationDate}}</span>
+								<span>{{suggestion.creationDate | date}}</span>
+							</li>
+							<li>
+								<b>Descripción:</b>
+								<p>{{ suggestion.description }}</p>
 							</li>
 						</ul>
 					</div>
@@ -29,7 +33,7 @@
 				<div class="col s2 teal">
 					<!--<i class="material-icons large center">query_builder</i>-->
 					<i class="material-icons large center center-icon white-text">done</i>
-					<p class="center white-text">{{suggestion.state}}</p>
+					<p class="center white-text">{{suggestion.stateId}}</p>
 				</div>
 
 			</div>

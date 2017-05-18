@@ -5,6 +5,6 @@ export interface ISuggestion{
    email: string,
    description: string,
    creationDate: string,
-   typeService: number,
-   state: string
+   typeSuggestion: number,
+   stateId: number
 }

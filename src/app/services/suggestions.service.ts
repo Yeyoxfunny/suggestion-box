@@ -39,7 +39,12 @@ export class SuggestionsService {
 		return this.http
 						.post(this.baseUrl, suggestion)
 						.toPromise()
-						.then(console.log)
+						.then(response => {
+							if(response.status !== 201){
+								return this.errorHandler(response);
+							}
+							return response.json();
+						})
 						.catch(this.errorHandler);
 	}
 
